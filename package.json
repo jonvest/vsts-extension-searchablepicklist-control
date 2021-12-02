@@ -42,7 +42,7 @@
   "dependencies": {
     "es6-promise": "^4.2.8"
   },
-  "name": "multivalue-control-extension",
+  "name": "testcontrol",
   "license": "MIT",
   "description": "VSTS Work Item Form Multivalue Control Extension",
   "repository": "",

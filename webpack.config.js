@@ -4,11 +4,17 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+    devtool: "inline-source-map",
+    devServer: {
+        https: true,
+        port: 3000
+    },
     target: "web",
     entry: {
         multivalue: "./src/multivalue.ts"
     },
     output: {
+        publicPath: "/dist/",
         filename: "src/[name].js",
         libraryTarget: "amd"
     },
@@ -45,7 +51,8 @@ module.exports = {
                     { from: "./node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js", to: "libs/VSS.SDK.min.js" },
                     { from: "./src/multivalue.html", to: "./" },
                     { from: "./img", to: "img" },
-                    { from: "./readme.md", to: "readme.md" }
+                    { from: "./readme.md", to: "readme.md" },
+                    { from: "**/*.html", context: "src" }
         ]})
     ]
 }
