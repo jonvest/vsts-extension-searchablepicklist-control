@@ -40,9 +40,8 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
         const {focused} = this.state;
 
         return <div className={`multi-value-control ${focused ? "focused" : ""}`}>
-            <TagPicker            
+            <TagPicker
                 className="tag-picker"
-                itemLimit={ 1 }
                 selectedItems={(this.props.selected || []).map((t) => ({ key: t, name: t }))}
                 inputProps={{
                     placeholder: this.props.placeholder,
@@ -51,8 +50,7 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
                     onFocus: () => this.setState({ focused: true }),
                 }}
                 onChange={this._onTagsChanged}
-                onResolveSuggestions={() => []}       
-                         
+                onResolveSuggestions={() => []}
                 />
             {focused ? this._getOptions() : null}
             <div className="error">{this.props.error}</div>
@@ -64,6 +62,7 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
         }
     }
     private _getOptions() {
+        const options = this.props.options;
         const selected = (this.props.selected || []).slice(0);
         const filteredOpts = this._filteredOptions();
 
@@ -80,7 +79,17 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
                 direction={FocusZoneDirection.vertical}
                 className="checkboxes"
             >
-                                {filteredOpts
+                {this.state.filter ? null :
+                <Checkbox
+                    label="Select All"
+                    checked={selected.join(";") === options.join(";")}
+                    onChange={this._toggleSelectAll}
+                    inputProps={{
+                        onBlur: this._onBlur,
+                        onFocus: this._onFocus,
+                    }}
+                />}
+                {filteredOpts
                 .map((o) => <Checkbox
                     checked={selected.indexOf(o) >= 0}
                     inputProps={{
@@ -177,7 +186,7 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
         }
         const change = option in selectedMap || this.props.options.indexOf(option) >= 0;
         selectedMap[option] = !selectedMap[option];
-        const selected = this._mergeStrArrays([this.props.options, [], [option]]).filter((o) => selectedMap[o]);
+        const selected = this._mergeStrArrays([this.props.options, this.props.selected || [], [option]]).filter((o) => selectedMap[o]);
         this._setSelected(selected);
         this._ifSafariCloseDropdown();
         return change;
