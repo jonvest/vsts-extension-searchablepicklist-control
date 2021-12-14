@@ -51,6 +51,7 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
                 }}
                 onChange={this._onTagsChanged}
                 onResolveSuggestions={() => []}
+                itemLimit={1}
                 />
             {focused ? this._getOptions() : null}
             <div className="error">{this.props.error}</div>
