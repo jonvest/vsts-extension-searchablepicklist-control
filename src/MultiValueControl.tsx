@@ -164,9 +164,13 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
         for (const s of this.props.selected || []) {
             selectedMap[s] = true;
         }
+        if (option === "yellow") {
+            console.log("Yellow clicked");
+        }
         const change = option in selectedMap || this.props.options.indexOf(option) >= 0;
-        selectedMap[option] = !selectedMap[option];
-        const selected = this._mergeStrArrays([this.props.options, this.props.selected || [], [option]]).filter((o) => selectedMap[o]);
+        //selectedMap[option] = !selectedMap[option];
+        //const selected = this._mergeStrArrays([this.props.options, this.props.selected || [], [option]]).filter((o) => selectedMap[o]);
+        const selected: string[] = [option];
         this._setSelected(selected);
         this._ifSafariCloseDropdown();
         return change;
