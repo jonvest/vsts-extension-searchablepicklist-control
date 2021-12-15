@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1.0,
-    "id": "testcontrol",
-    "version": "2.2.35",
-    "name": "Multivalue control",
-    "description": "A work item form control which allows selection of multiple values.",
+    "id": "SearchablePicklist",
+    "version": "1.0.0",
+    "name": "Searchable Picklist",
+    "description": "A work item form control with inline search which allows selection of a single item.",
     "publisher": "jonvest",
     "icons": {
         "default": "img/logo.png"
@@ -64,14 +64,14 @@
     ],
     "contributions": [
 		{
-            "id": "multivalue-form-control",
+            "id": "searchable-picklist",
             "type": "ms.vss-work-web.work-item-form-control",
-            "description": "A work item form control which allows selection of multiple values.",
+            "description": "A work item form control with inline search which allows selection of a single item.",
             "targets": [
                 "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "name": "Multivalue control",
+                "name": "Searchable Picklist",
                 "uri": "dist/multivalue.html",
                 "height": 50,
 				"inputs": [
