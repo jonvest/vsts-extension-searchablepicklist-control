@@ -63,7 +63,6 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
         }
     }
     private _getOptions() {
-        const options = this.props.options;
         const selected = (this.props.selected || []).slice(0);
         const filteredOpts = this._filteredOptions();
 
@@ -80,16 +79,6 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
                 direction={FocusZoneDirection.vertical}
                 className="checkboxes"
             >
-                {this.state.filter ? null :
-                <Checkbox
-                    label="Select All"
-                    checked={selected.join(";") === options.join(";")}
-                    onChange={this._toggleSelectAll}
-                    inputProps={{
-                        onBlur: this._onBlur,
-                        onFocus: this._onFocus,
-                    }}
-                />}
                 {filteredOpts
                 .map((o) => <Checkbox
                     checked={selected.indexOf(o) >= 0}
@@ -132,16 +121,6 @@ export class MultiValueControl extends React.Component<IMultiValueControlProps, 
             e.preventDefault();
             e.stopPropagation();
         }
-    }
-    private _toggleSelectAll = () => {
-        const options = this.props.options;
-        const selected = this.props.selected || [];
-        if (selected.join(";") === options.join(";")) {
-            this._setSelected([]);
-        } else {
-            this._setSelected(options);
-        }
-        this._ifSafariCloseDropdown();
     }
     private _filteredOptions = (): string[] => {
         const filter = this.state.filter.toLocaleLowerCase();
