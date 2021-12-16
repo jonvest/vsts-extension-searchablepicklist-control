@@ -28,23 +28,23 @@
     ],
     "repository": {
         "type": "git",
-        "uri": "https://github.com/Microsoft/vsts-extension-multivalue-control"
+        "uri": "https://github.com/jonvest/vsts-extension-searchablepicklist-control"
     },
     "links": {
         "home": {
-            "uri": "https://github.com/Microsoft/vsts-extension-multivalue-control"
+            "uri": "https://github.com/jonvest/vsts-extension-searchablepicklist-control"
         },
         "learn": {
-            "uri": "https://github.com/Microsoft/vsts-extension-multivalue-control"
+            "uri": "https://github.com/jonvest/vsts-extension-searchablepicklist-control"
         },
         "repository": {
-            "uri": "https://github.com/Microsoft/vsts-extension-multivalue-control"
+            "uri": "https://github.com/jonvest/vsts-extension-searchablepicklist-control"
         },
         "issues": {
-            "uri": "https://github.com/Microsoft/vsts-extension-multivalue-control/issues"
+            "uri": "https://github.com/jonvest/vsts-extension-searchablepicklist-control/issues"
         },
         "support": {
-            "uri": "https://github.com/Microsoft/vsts-extension-multivalue-control/issues"
+            "uri": "https://github.com/jonvest/vsts-extension-searchablepicklist-control/issues"
         }
     },
     "tags": [
@@ -52,7 +52,10 @@
         "Extensions",
         "Work Item Control",
         "Sample",
-        "Multivalue Control"
+        "Inline Search",
+        "Search",
+        "Picklist",
+        "TagPicker"
     ],
     "content": {
         "details": {
