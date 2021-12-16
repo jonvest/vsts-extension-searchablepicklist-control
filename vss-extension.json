@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1.0,
     "id": "SearchablePicklist",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Searchable Picklist",
     "description": "A work item form control with inline search which allows selection of a single item.",
     "publisher": "jonvest",
