@@ -1,7 +1,7 @@
 # Background
 This extension is a very small modification to the Mulitvalue Control provided by Microsoft DevLabs, found [here](https://github.com/microsoft/vsts-extension-multivalue-control).  See that repo for more details.
 
-I needed a picklist that had inline search capabiilities but could not find one in the marketplace.  There are picklists that support "starts with" searches, but I could not find one that allowed inline search.  The DevLabs MultiValue control supports inline search, but I needed to limit the selection to a single item, so I created this modification.  
+I needed a picklist that had inline search capabilities but could not find one in the marketplace.  There are picklists that support "starts with" searches, but I could not find one that allowed inline search.  The DevLabs MultiValue control supports inline search, but I needed to limit the selection to a single item, so I created this modification.  
 
 This is really a tag picker, not a picklist, but is functionally similar.
 
